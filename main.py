@@ -56,16 +56,17 @@ async def profile(message: types.Message):
     if data:
         nickname, xp, level, rank, bronze, silver, gold, diamond, gem = data
         await message.answer(
-            f"Nickname: {nickname}")
- f"Rank: {rank}")
- f"Level: {level}")
- f"XP: {xp}")
+ f"Nickname: {nickname}\n"
+ f"Rank: {rank}\n"
+ f"Level: {level}\n"
+ f"XP: {xp}\n"
  Wallet:
- f"Bronze: {bronze}")
- f"Silver: {silver}")
- f"Gold: {gold}")
- f"Diamond: {diamond}")
- f"Gem: {gem}")
+ f"Bronze: {bronze}\n"
+ f"Silver: {silver}\n"
+ f"Gold: {gold}\n"
+ f"Diamond: {diamond}\n"
+ f"Gem: {gem}"
+)
     else:
         await message.answer("You are not registered. Use /start.")
 
