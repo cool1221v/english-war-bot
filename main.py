@@ -61,12 +61,12 @@ async def profile(message: types.Message):
  Level: {level}
  XP: {xp}
 
- Wallet:
- Bronze: {bronze}
- Silver: {silver}
- Gold: {gold}
- Diamond: {diamond}
- Gem: {gem}"
+Wallet:
+f"Bronze: {bronze}"
+f"Silver: {silver}"
+f"Gold: {gold}"
+f"Diamond: {diamond}"
+f"Gem: {gem}"
         )
     else:
         await message.answer("You are not registered. Use /start.")
