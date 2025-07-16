@@ -56,17 +56,17 @@ async def profile(message: types.Message):
     if data:
         nickname, xp, level, rank, bronze, silver, gold, diamond, gem = data
         await message.answer(
-            f"🪪 Nickname: {nickname}"
-🎯 Rank: {rank}
-🧠 Level: {level}
-📈 XP: {xp}
+            f"Nickname: {nickname}"
+ Rank: {rank}
+ Level: {level}
+ XP: {xp}
 
-💰 Wallet:
-🥉 Bronze: {bronze}
-🥈 Silver: {silver}
-🥇 Gold: {gold}
-💎 Diamond: {diamond}
-🔷 Gem: {gem}"
+ Wallet:
+ Bronze: {bronze}
+ Silver: {silver}
+ Gold: {gold}
+ Diamond: {diamond}
+ Gem: {gem}"
         )
     else:
         await message.answer("You are not registered. Use /start.")
@@ -95,7 +95,7 @@ async def quiz(message: types.Message):
     for opt in q['options']:
         markup.add(opt)
 
-    await message.answer(f"🧠 {q['q']}", reply_markup=markup)
+    await message.answer(f"{q['q']}", reply_markup=markup)
 
     @dp.message_handler(lambda msg: msg.text in q['options'])
     async def answer_handler(msg: types.Message):
@@ -103,9 +103,9 @@ async def quiz(message: types.Message):
         if idx == q['a']:
             cursor.execute("UPDATE users SET xp = xp + 50, bronze = bronze + 10 WHERE id = ?", (msg.from_user.id,))
             conn.commit()
-            await msg.answer("✅ Correct! +50 XP, +10 Bronze")
+            await msg.answer("Correct! +50 XP, +10 Bronze")
         else:
-            await msg.answer("❌ Wrong. Try again next time.")
+            await msg.answer("Wrong. Try again next time.")
 
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
