@@ -56,7 +56,7 @@ async def profile(message: types.Message):
     if data:
         nickname, xp, level, rank, bronze, silver, gold, diamond, gem = data
         await message.answer(
-            f"🪪 Nickname: {nickname}
+            f"🪪 Nickname: {nickname"}
 🎯 Rank: {rank}
 🧠 Level: {level}
 📈 XP: {xp}
