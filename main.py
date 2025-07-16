@@ -60,7 +60,7 @@ async def profile(message: types.Message):
  f"Rank: {rank}\n"
  f"Level: {level}\n"
  f"XP: {xp}\n"
- Wallet:
+ f"Wallet:\n"
  f"Bronze: {bronze}\n"
  f"Silver: {silver}\n"
  f"Gold: {gold}\n"
