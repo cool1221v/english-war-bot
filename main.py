@@ -41,7 +41,7 @@ async def start_cmd(message: types.Message):
         @dp.message_handler()
         async def get_nickname(msg: types.Message):
             nickname = msg.text.strip()
-            cursor.execute("INSERT INTO users (id, username, nickname) VALUES (?, ?, ?)",
+            cursor.execute("INSERT OR IGNORE INTO users (id, username, nickname) VALUES (?, ?, ?)",
                            (user_id, msg.from_user.username, nickname))
             conn.commit()
             await msg.answer(f"Nickname set! Welcome to the grind, {nickname}. Use /quiz to begin.")
